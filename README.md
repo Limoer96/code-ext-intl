@@ -4,7 +4,7 @@ Based on TypeScript AST APIs, a tool for extracting and replacing Chinese entrie
 
 ## Screenshots
 
-![screenshot](features.gif)
+![screenshot](https://i.loli.net/2020/05/25/61R4H7gIASsaYfr.gif)
 
 ## Requirements
 
