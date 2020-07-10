@@ -52,7 +52,7 @@
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
-    "ext-intl": "^1.6.2",
+    "ext-intl": "^2.0.1",
     "prettier": "^2.0.5"
   }
 }

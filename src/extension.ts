@@ -7,15 +7,17 @@ import * as prettier from 'prettier'
 export interface IConfig {
   outputPath: string
   rootPath: string
-  template: boolean
   extractOnly: boolean
   whiteList: string[]
-  mode?: 'sample' | 'depth' // 模式类型 简单模式/深层次导出
   prefix?: string[]
-  // 用于处理模板字符串的配置
   templateString?: {
     funcName: string
   }
+  langs?: string[]
+}
+// fix:path
+process.cwd = function () {
+  return vscode.workspace.rootPath!
 }
 
 function resolvePath(pathName: string) {
@@ -23,16 +25,15 @@ function resolvePath(pathName: string) {
 }
 
 export const INIT_CONFIG: IConfig = {
-  outputPath: resolvePath('./intl'),
+  outputPath: resolvePath('./i18n'),
   rootPath: resolvePath('./src'),
-  template: false,
   extractOnly: true,
   whiteList: ['.ts', '.tsx', '.js', '.jsx'],
-  mode: 'depth',
   prefix: [],
   templateString: {
-    funcName: 'intl.get',
+    funcName: 'kiwiIntl.get',
   },
+  langs: ['zh-CN', 'en-US'],
 }
 
 function checkConfig(dir: string = '', fileName: string) {
@@ -77,6 +78,7 @@ export function activate(context: vscode.ExtensionContext) {
     checkConfig(vscode.workspace.rootPath, CONFIG_FILE_NAME)
       .then((config) => {
         intl(config as any)
+        vscode.window.showInformationMessage('运行完成')
       })
       .catch((err) => {
         vscode.window.showErrorMessage(err)

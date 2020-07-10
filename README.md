@@ -12,6 +12,6 @@ This plugin depends on the i18n solution [ext-intl](https://www.npmjs.com/packag
 
 ### For more information
 
-- [ext-intl](https://www.npmjs.com/package/ext-intl)
+- see more at [ext-intl](https://www.npmjs.com/package/ext-intl).**Important!**
 
 **Enjoy!**
