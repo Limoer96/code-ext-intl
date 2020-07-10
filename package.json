@@ -2,7 +2,7 @@
   "name": "ext-intl",
   "displayName": " i18n tool",
   "description": "Based on TypeScript AST APIs, a tool for extracting and replacing Chinese entries from React component / js source files",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.45.0"
   },
